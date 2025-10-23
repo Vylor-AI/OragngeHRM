@@ -53,7 +53,7 @@ public class LoginPage {
     }
 
     public void checkUserNameBar(){
-        driver.findElement(usernameInBar).isDisplayed();
+        System.out.println(driver.findElement(usernameInBar).isDisplayed());
     }
 
     public void deleteButton() {
@@ -63,11 +63,11 @@ public class LoginPage {
     }
 
     public void checkIsDeleted(){
-        driver.findElement(checkDeleted).isDisplayed();
+        System.out.println(driver.findElement(checkDeleted).isDisplayed());
     }
 
     public void checkInValidLoginMessageVisability(){
-        driver.findElement(InvalidLoginMessage).isDisplayed();
+        System.out.println(driver.findElement(InvalidLoginMessage).isDisplayed());
     }
 
 
