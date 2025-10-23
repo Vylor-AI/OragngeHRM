@@ -3,7 +3,7 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
+
 
 public class ProductPage {
 
@@ -66,7 +66,12 @@ public class ProductPage {
         System.out.println(driver.findElement(checkNavigationIntoRightProduct).isDisplayed());
     }
 
+        // Removed assertions from page object; getters provided for test assertions
     public void checkDetailsOfFirstProduct(){
+        // No-op; assertions moved to test class
+    }
+
+    /** Getters for product details to drive assertions in test class **/
 
         String productNametext = driver.findElement(productName).getText();
         Assert.assertEquals(productNametext,"Blue Top","Product Name Fail");
@@ -86,6 +91,30 @@ public class ProductPage {
         String productBrandtext = driver.findElement(productBrand).getText();
         Assert.assertEquals(productBrandtext,"Brand:","Product Brand Fail");
 
+    }
+
+        public String getProductName(){
+        return driver.findElement(productName).getText();
+    }
+
+    public String getProductCategory(){
+        return driver.findElement(productCategory).getText();
+    }
+
+    public String getProductPrice(){
+        return driver.findElement(productPrice).getText();
+    }
+
+    public String getProductAvailability(){
+        return driver.findElement(productAvailability).getText();
+    }
+
+    public String getProductCondition(){
+        return driver.findElement(productCondition).getText();
+    }
+
+    public String getProductBrand(){
+        return driver.findElement(productBrand).getText();
     }
 
     public void addValueToSearchBar(String product){
