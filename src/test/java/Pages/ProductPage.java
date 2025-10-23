@@ -67,25 +67,31 @@ public class ProductPage {
     }
 
     public void checkDetailsOfFirstProduct(){
+        // navigation to the first product’s details is handled by test assertions in TestPages
+    }
 
-        String productNametext = driver.findElement(productName).getText();
-        Assert.assertEquals(productNametext,"Blue Top","Product Name Fail");
+    public String getProductName() {
+        return driver.findElement(productName).getText();
+    }
 
-        String productCategorytext = driver.findElement(productCategory).getText();
-        Assert.assertEquals(productCategorytext,"Category: Women > Tops","Product Category Fail");
+    public String getProductCategory() {
+        return driver.findElement(productCategory).getText();
+    }
 
-        String productPricetext = driver.findElement(productPrice).getText();
-        Assert.assertEquals(productPricetext,"Rs. 500","Product Price Fail");
+    public String getProductPrice() {
+        return driver.findElement(productPrice).getText();
+    }
 
-        String productAvailabilitytext = driver.findElement(productAvailability).getText();
-        Assert.assertEquals(productAvailabilitytext,"Availability:","Product Avability Fail");
+    public String getProductAvailability() {
+        return driver.findElement(productAvailability).getText();
+    }
 
-        String productConditiontext = driver.findElement(productCondition).getText();
-        Assert.assertEquals(productConditiontext,"Condition:","Product Condition Fail");
+    public String getProductCondition() {
+        return driver.findElement(productCondition).getText();
+    }
 
-        String productBrandtext = driver.findElement(productBrand).getText();
-        Assert.assertEquals(productBrandtext,"Brand:","Product Brand Fail");
-
+    public String getProductBrand() {
+        return driver.findElement(productBrand).getText();
     }
 
     public void addValueToSearchBar(String product){
