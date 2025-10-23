@@ -103,4 +103,6 @@ public class ProductPage {
     public void getRelatedSearchProductsFun(){
         System.out.println(driver.findElement(relatedSearchProducts).isDisplayed());
     }
+
+
 }
