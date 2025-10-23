@@ -3,16 +3,13 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.Test;
-import utils.BaseTest;
 
 import java.time.Duration;
 
-public class RegisterPage  {
+public class RegisterPage {
 
     WebDriver driver;
 
@@ -20,66 +17,48 @@ public class RegisterPage  {
         this.driver = driver;
     }
 
-
     By homeCheck = By.cssSelector("body > section:nth-child(3) > div > div > div.col-sm-9.padding-right > div.features_items > h2");
-
-    By singInAndSignUpButton = By.cssSelector("#header > div > div > div > div.col-sm-8 > div > ul > li:nth-child(4) > a");
+    By signInAndSignUpButton = By.cssSelector("#header > div > div > div > div.col-sm-8 > div > ul > li:nth-child(4) > a");
     By newUserSignUpVisible = By.cssSelector("#form > div > div > div:nth-child(3) > div > h2");
-
     By userNameField = By.cssSelector("#form > div > div > div:nth-child(3) > div > form > input[type=text]:nth-child(2)");
     By emailAddressField = By.cssSelector("#form > div > div > div:nth-child(3) > div > form > input[type=email]:nth-child(3)");
-
     By signupBtn = By.xpath("//button[@data-qa=\"signup-button\"]");
     By enterAccountInformation = By.cssSelector("#form > div > div > div > div.login-form > h2 > b");
-
-
-    By Mr = By.cssSelector("##id_gender1");
-    By Mrs = By.cssSelector("#id_gender2");
-
+    By mr = By.cssSelector("#id_gender1");
+    By mrs = By.cssSelector("#id_gender2");
     By password = By.cssSelector("#password");
-
     By dayDate = By.cssSelector("#days");
     By monthDate = By.cssSelector("#months");
     By yearDate = By.cssSelector("#years");
-
     By newsLetter = By.cssSelector("#newsletter");
     By specialOffers = By.cssSelector("#optin");
-
     By firstName = By.cssSelector("#first_name");
-    By lastNmae = By.cssSelector("#last_name");
-
+    By lastName = By.cssSelector("#last_name");
     By companyName = By.cssSelector("#company");
-
     By addressField = By.cssSelector("#address1");
     By address2Field = By.cssSelector("#address2");
-
-    By contoryField = By.cssSelector("#country");
-
+    By countryField = By.cssSelector("#country");
     By stateField = By.cssSelector("#state");
     By cityField = By.cssSelector("#city");
     By zipCode = By.cssSelector("#zipcode");
     By mobileNumber = By.cssSelector("#mobile_number");
-
     By createAccountButton = By.cssSelector("#form > div > div > div > div.login-form > form > button");
-
     By alreadyExistedUser = By.cssSelector("#form > div > div > div:nth-child(3) > div > form > p");
-
     By verifyAccountCreated = By.cssSelector("#form > div > div > div > h2 > b");
-
-    By continueButtin = By.cssSelector("#form > div > div > div > div > a");
+    By continueButton = By.cssSelector("#form > div > div > div > div > a");
 
     public void HomeCheck() {
-        System.out.println(driver.findElement(homeCheck).isDisplayed());
+        // visibility moved to test via getter
     }
 
     public void SingInAndSignUpButton() {
-        WebElement textField = driver.findElement(singInAndSignUpButton);
+        WebElement textField = driver.findElement(signInAndSignUpButton);
         String value2 = textField.getAttribute("href");
         driver.navigate().to(value2);
     }
 
     public void NewUserSignUpVisible() {
-        System.out.println(driver.findElement(newUserSignUpVisible).isDisplayed());
+        // visibility moved to test via getter
     }
 
     public void setUserName(String userName) {
@@ -91,24 +70,19 @@ public class RegisterPage  {
     }
 
     public void setSignUpButton() {
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//        WebElement element = wait.until(
-//                ExpectedConditions.elementToBeClickable(signupBtn));
-//        element.click();
-
         driver.findElement(signupBtn).click();
     }
 
     public void setEnterAccountInformation() {
-        System.out.println(driver.findElement(enterAccountInformation).isDisplayed());
+        // visibility moved to test via getter
     }
 
     public void setMr() {
-        driver.findElement(Mr).click();
+        driver.findElement(mr).click();
     }
 
     public void setMrs() {
-        driver.findElement(Mrs).click();
+        driver.findElement(mrs).click();
     }
 
     public void setPassword(String pass) {
@@ -116,18 +90,18 @@ public class RegisterPage  {
     }
 
     public void setDayDate(String day) {
-        Select daySeletor = new Select(driver.findElement(dayDate));
-        daySeletor.selectByContainsVisibleText(day);
+        Select daySelector = new Select(driver.findElement(dayDate));
+        daySelector.selectByVisibleText(day);
     }
 
     public void setMonthDate(String month) {
-        Select daySeletor = new Select(driver.findElement(monthDate));
-        daySeletor.selectByContainsVisibleText(month);
+        Select monthSelector = new Select(driver.findElement(monthDate));
+        monthSelector.selectByVisibleText(month);
     }
 
     public void setYearDate(String year) {
-        Select daySeletor = new Select(driver.findElement(yearDate));
-        daySeletor.selectByContainsVisibleText(year);
+        Select yearSelector = new Select(driver.findElement(yearDate));
+        yearSelector.selectByVisibleText(year);
     }
 
     public void setNewsLetter() {
@@ -142,8 +116,8 @@ public class RegisterPage  {
         driver.findElement(firstName).sendKeys(fName);
     }
 
-    public void setLastNmae(String lName) {
-        driver.findElement(lastNmae).sendKeys(lName);
+    public void setLastName(String lName) {
+        driver.findElement(lastName).sendKeys(lName);
     }
 
     public void setCompanyName(String comName) {
@@ -158,9 +132,9 @@ public class RegisterPage  {
         driver.findElement(address2Field).sendKeys(address2Text);
     }
 
-    public void setContoryField(String contoryFi) {
-        Select selector = new Select(driver.findElement(contoryField));
-        selector.selectByContainsVisibleText(contoryFi);
+    public void setCountryField(String countryFi) {
+        Select selector = new Select(driver.findElement(countryField));
+        selector.selectByVisibleText(countryFi);
     }
 
     public void setStateField(String stateFi) {
@@ -171,8 +145,8 @@ public class RegisterPage  {
         driver.findElement(cityField).sendKeys(cityFi);
     }
 
-    public void setZipCode(String zipCodefi) {
-        driver.findElement(zipCode).sendKeys(zipCodefi);
+    public void setZipCode(String zipCodeFi) {
+        driver.findElement(zipCode).sendKeys(zipCodeFi);
     }
 
     public void setMobileNumber(String mobileNumberText) {
@@ -183,17 +157,42 @@ public class RegisterPage  {
         driver.findElement(createAccountButton).click();
     }
 
-    public void registerWithExistedUser(){
-        driver.findElement(alreadyExistedUser).isDisplayed();
+    public void registerWithExistedUser() {
+        // visibility moved to test via getter
     }
 
-    public void verifyAccountCreatedFun(){
-        System.out.println(driver.findElement(verifyAccountCreated).isDisplayed());
+    public void verifyAccountCreatedFun() {
+        // visibility moved to test via getter
     }
 
-    public void clickOnContinueButton(){
-        WebElement textField = driver.findElement(continueButtin);
+    public void clickOnContinueButton() {
+        WebElement textField = driver.findElement(continueButton);
         String value2 = textField.getAttribute("href");
         driver.navigate().to(value2);
+    }
+
+    // Getters for visibility assertions in tests
+    public boolean isHomeCheckVisible() {
+        return driver.findElement(homeCheck).isDisplayed();
+    }
+
+    public boolean isSignInAndSignUpButtonVisible() {
+        return driver.findElement(signInAndSignUpButton).isDisplayed();
+    }
+
+    public boolean isNewUserSignUpVisible() {
+        return driver.findElement(newUserSignUpVisible).isDisplayed();
+    }
+
+    public boolean isEnterAccountInformationVisible() {
+        return driver.findElement(enterAccountInformation).isDisplayed();
+    }
+
+    public boolean isAlreadyExistedUserVisible() {
+        return driver.findElement(alreadyExistedUser).isDisplayed();
+    }
+
+    public boolean isAccountCreatedVisible() {
+        return driver.findElement(verifyAccountCreated).isDisplayed();
     }
 }

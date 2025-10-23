@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-
 public class ProductPage {
 
     WebDriver driver;
@@ -13,33 +12,25 @@ public class ProductPage {
         this.driver = driver;
     }
 
-
     By homeCheck = By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[1]/a");
     By productsButton = By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[2]/a");
     By verifyProductsButton = By.xpath("/html/body/section[2]/div/div/div[2]/div/h2");
-
-    By verifyProductsListVisable = By.xpath("/html/body/section[2]/div/div/div[2]");
-
+    By verifyProductsListVisible = By.xpath("/html/body/section[2]/div/div/div[2]");
     By clickOnViewProduct = By.xpath("/html/body/section[2]/div/div/div[2]/div/div[2]/div/div[2]/ul/li/a");
-
     By checkNavigationIntoRightProduct = By.xpath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/h2");
-
     By productName = By.xpath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/h2");
     By productCategory = By.xpath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[1]");
     By productPrice = By.xpath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/span/span");
     By productAvailability = By.xpath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[2]/b");
     By productCondition = By.xpath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[3]/b");
     By productBrand = By.xpath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[4]/b");
-
     By searchBar = By.xpath("//*[@id=\"search_product\"]");
     By getSearchButton = By.xpath("//*[@id=\"search_product\"]");
-
     By verifySearchedProduct = By.xpath("/html/body/section[2]/div/div/div[2]/div/h2");
-
     By relatedSearchProducts = By.xpath("/html/body/section[2]/div/div/div[2]/div/div[2]/div/div[1]/div[1]/p");
 
     public void HomeCheck() {
-        System.out.println(driver.findElement(homeCheck).isDisplayed());
+        // visibility moved to test via getter
     }
 
     public void productsButtonFun() {
@@ -48,90 +39,87 @@ public class ProductPage {
         driver.navigate().to(value2);
     }
 
-    public void verifyProductsButtonFun(){
-        System.out.println(driver.findElement(verifyProductsButton).isDisplayed());
+    public void verifyProductsButtonFun() {
+        // visibility moved to test via getter
     }
 
-    public void verifyProductsVisableFun(){
-        System.out.println(driver.findElement(verifyProductsListVisable).isDisplayed());
+    public void verifyProductsListVisibleFun() {
+        // visibility moved to test via getter
     }
 
-    public void clickOnViewProductFun(){
+    public void clickOnViewProductFun() {
         WebElement textField = driver.findElement(clickOnViewProduct);
         String value2 = textField.getAttribute("href");
         driver.navigate().to(value2);
     }
 
-    public void checkNavigationIntoRightProductFun(){
-        System.out.println(driver.findElement(checkNavigationIntoRightProduct).isDisplayed());
+    public void checkNavigationIntoRightProductFun() {
+        // visibility moved to test via getter
     }
 
-        // Removed assertions from page object; getters provided for test assertions
-    public void checkDetailsOfFirstProduct(){
-        // No-op; assertions moved to test class
-    }
-
-    /** Getters for product details to drive assertions in test class **/
-
-        String productNametext = driver.findElement(productName).getText();
-        Assert.assertEquals(productNametext,"Blue Top","Product Name Fail");
-
-        String productCategorytext = driver.findElement(productCategory).getText();
-        Assert.assertEquals(productCategorytext,"Category: Women > Tops","Product Category Fail");
-
-        String productPricetext = driver.findElement(productPrice).getText();
-        Assert.assertEquals(productPricetext,"Rs. 500","Product Price Fail");
-
-        String productAvailabilitytext = driver.findElement(productAvailability).getText();
-        Assert.assertEquals(productAvailabilitytext,"Availability:","Product Avability Fail");
-
-        String productConditiontext = driver.findElement(productCondition).getText();
-        Assert.assertEquals(productConditiontext,"Condition:","Product Condition Fail");
-
-        String productBrandtext = driver.findElement(productBrand).getText();
-        Assert.assertEquals(productBrandtext,"Brand:","Product Brand Fail");
-
-    }
-
-        public String getProductName(){
-        return driver.findElement(productName).getText();
-    }
-
-    public String getProductCategory(){
-        return driver.findElement(productCategory).getText();
-    }
-
-    public String getProductPrice(){
-        return driver.findElement(productPrice).getText();
-    }
-
-    public String getProductAvailability(){
-        return driver.findElement(productAvailability).getText();
-    }
-
-    public String getProductCondition(){
-        return driver.findElement(productCondition).getText();
-    }
-
-    public String getProductBrand(){
-        return driver.findElement(productBrand).getText();
-    }
-
-    public void addValueToSearchBar(String product){
+    public void addValueToSearchBar(String product) {
         driver.findElement(searchBar).sendKeys(product);
     }
 
-    public void clickOnSearchButton(){
+    public void clickOnSearchButton() {
         driver.findElement(getSearchButton).click();
     }
 
-    public void verifySearchedProductFun(){
-        System.out.println(driver.findElement(verifySearchedProduct).isDisplayed());
+    public void verifySearchedProductFun() {
+        // visibility moved to test via getter
     }
 
-    public void getRelatedSearchProductsFun(){
-        System.out.println(driver.findElement(relatedSearchProducts).isDisplayed());
+    public void getRelatedSearchProductsFun() {
+        // visibility moved to test via getter
     }
 
+    // Getters for visibility assertions in tests
+    public boolean isHomeCheckVisible() {
+        return driver.findElement(homeCheck).isDisplayed();
+    }
 
+    public boolean isVerifyProductsButtonVisible() {
+        return driver.findElement(verifyProductsButton).isDisplayed();
+    }
+
+    public boolean isProductsListVisible() {
+        return driver.findElement(verifyProductsListVisible).isDisplayed();
+    }
+
+    public boolean isNavigationIntoRightProductVisible() {
+        return driver.findElement(checkNavigationIntoRightProduct).isDisplayed();
+    }
+
+    public boolean isVerifySearchedProductVisible() {
+        return driver.findElement(verifySearchedProduct).isDisplayed();
+    }
+
+    public boolean isRelatedSearchProductsVisible() {
+        return driver.findElement(relatedSearchProducts).isDisplayed();
+    }
+
+    // Getters for product detail assertions
+    public String getProductName() {
+        return driver.findElement(productName).getText();
+    }
+
+    public String getProductCategory() {
+        return driver.findElement(productCategory).getText();
+    }
+
+    public String getProductPrice() {
+        return driver.findElement(productPrice).getText();
+    }
+
+    public String getProductAvailability() {
+        return driver.findElement(productAvailability).getText();
+    }
+
+    public String getProductCondition() {
+        return driver.findElement(productCondition).getText();
+    }
+
+    public String getProductBrand() {
+        return driver.findElement(productBrand).getText();
+    }
 }

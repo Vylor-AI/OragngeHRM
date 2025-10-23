@@ -2,7 +2,6 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class TestCasesPage {
 
@@ -13,21 +12,22 @@ public class TestCasesPage {
     }
 
     By homeCheck = By.cssSelector("body > section:nth-child(3) > div > div > div.col-sm-9.padding-right > div.features_items > h2");
-    By testCaseButton = By.cssSelector("#header > div > div > div > div.col-sm-8 > div > ul > li:nth-child(5) > a");
-    By verifyTestCasesButton = By.cssSelector("#form > div > div.row > div > h2 > b");
+    By verifyTestCasesButton = By.cssSelector("#header > div > div > div > div.col-sm-8 > div > ul > li:nth-child(7) > a");
 
     public void HomeCheck() {
-        System.out.println(driver.findElement(homeCheck).isDisplayed());
+        // visibility moved to test via getter
     }
 
-    public void testCasesButtonFun() {
-        WebElement textField = driver.findElement(testCaseButton);
-        String value2 = textField.getAttribute("href");
-        driver.navigate().to(value2);
+    public void verifyTestCasesButton() {
+        // visibility moved to test via getter
     }
 
-    public void verifyTestCasesButtonFun(){
-        System.out.println(driver.findElement(verifyTestCasesButton).isDisplayed());
+    // Getters for visibility assertions in tests
+    public boolean isHomeCheckVisible() {
+        return driver.findElement(homeCheck).isDisplayed();
     }
 
+    public boolean isTestCasesButtonVisible() {
+        return driver.findElement(verifyTestCasesButton).isDisplayed();
+    }
 }
