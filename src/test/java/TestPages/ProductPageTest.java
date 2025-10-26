@@ -2,6 +2,7 @@ package TestPages;
 
 import Pages.ProductPage;
 import org.testng.annotations.Test;
+import org.testng.Assert;
 import utils.BaseTest;
 
 public class ProductPageTest extends BaseTest {
@@ -21,7 +22,12 @@ public class ProductPageTest extends BaseTest {
         obj.clickOnViewProductFun();
 
         obj.checkNavigationIntoRightProductFun();
-        obj.checkDetailsOfFirstProduct();
+        Assert.assertEquals(obj.getProductNameText(),"Blue Top","Product Name Fail");
+        Assert.assertEquals(obj.getProductCategoryText(),"Category: Women > Tops","Product Category Fail");
+        Assert.assertEquals(obj.getProductPriceText(),"Rs. 500","Product Price Fail");
+        Assert.assertEquals(obj.getProductAvailabilityText(),"Availability:","Product Avability Fail");
+        Assert.assertEquals(obj.getProductConditionText(),"Condition:","Product Condition Fail");
+        Assert.assertEquals(obj.getProductBrandText(),"Brand:","Product Brand Fail");
     }
 
     @Test

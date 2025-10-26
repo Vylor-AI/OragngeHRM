@@ -3,7 +3,6 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 
 public class ProductPage {
 
@@ -66,26 +65,28 @@ public class ProductPage {
         System.out.println(driver.findElement(checkNavigationIntoRightProduct).isDisplayed());
     }
 
-    public void checkDetailsOfFirstProduct(){
+    public String getProductNameText() {
+        return driver.findElement(productName).getText();
+    }
 
-        String productNametext = driver.findElement(productName).getText();
-        Assert.assertEquals(productNametext,"Blue Top","Product Name Fail");
+    public String getProductCategoryText() {
+        return driver.findElement(productCategory).getText();
+    }
 
-        String productCategorytext = driver.findElement(productCategory).getText();
-        Assert.assertEquals(productCategorytext,"Category: Women > Tops","Product Category Fail");
+    public String getProductPriceText() {
+        return driver.findElement(productPrice).getText();
+    }
 
-        String productPricetext = driver.findElement(productPrice).getText();
-        Assert.assertEquals(productPricetext,"Rs. 500","Product Price Fail");
+    public String getProductAvailabilityText() {
+        return driver.findElement(productAvailability).getText();
+    }
 
-        String productAvailabilitytext = driver.findElement(productAvailability).getText();
-        Assert.assertEquals(productAvailabilitytext,"Availability:","Product Avability Fail");
+    public String getProductConditionText() {
+        return driver.findElement(productCondition).getText();
+    }
 
-        String productConditiontext = driver.findElement(productCondition).getText();
-        Assert.assertEquals(productConditiontext,"Condition:","Product Condition Fail");
-
-        String productBrandtext = driver.findElement(productBrand).getText();
-        Assert.assertEquals(productBrandtext,"Brand:","Product Brand Fail");
-
+    public String getProductBrandText() {
+        return driver.findElement(productBrand).getText();
     }
 
     public void addValueToSearchBar(String product){
