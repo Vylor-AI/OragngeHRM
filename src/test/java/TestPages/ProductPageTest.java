@@ -2,6 +2,7 @@ package TestPages;
 
 import Pages.ProductPage;
 import org.testng.annotations.Test;
+import org.testng.Assert;
 import utils.BaseTest;
 
 public class ProductPageTest extends BaseTest {
@@ -20,7 +21,7 @@ public class ProductPageTest extends BaseTest {
         obj.verifyProductsVisableFun();
         obj.clickOnViewProductFun();
 
-        obj.checkNavigationIntoRightProductFun();
+        Assert.assertTrue(obj.checkNavigationIntoRightProductFun(), "Navigation into right product page failed");
         obj.checkDetailsOfFirstProduct();
     }
 
