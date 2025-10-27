@@ -68,8 +68,8 @@ public class RegisterPage  {
 
     By continueButtin = By.cssSelector("#form > div > div > div > div > a");
 
-    public void HomeCheck() {
-        System.out.println(driver.findElement(homeCheck).isDisplayed());
+    public boolean HomeCheck() {
+        return driver.findElement(homeCheck).isDisplayed();
     }
 
     public void SingInAndSignUpButton() {
@@ -78,8 +78,8 @@ public class RegisterPage  {
         driver.navigate().to(value2);
     }
 
-    public void NewUserSignUpVisible() {
-        System.out.println(driver.findElement(newUserSignUpVisible).isDisplayed());
+    public boolean NewUserSignUpVisible() {
+        return driver.findElement(newUserSignUpVisible).isDisplayed();
     }
 
     public void setUserName(String userName) {
@@ -99,8 +99,8 @@ public class RegisterPage  {
         driver.findElement(signupBtn).click();
     }
 
-    public void setEnterAccountInformation() {
-        System.out.println(driver.findElement(enterAccountInformation).isDisplayed());
+    public boolean setEnterAccountInformation() {
+        return driver.findElement(enterAccountInformation).isDisplayed();
     }
 
     public void setMr() {
@@ -183,12 +183,12 @@ public class RegisterPage  {
         driver.findElement(createAccountButton).click();
     }
 
-    public void registerWithExistedUser(){
-        driver.findElement(alreadyExistedUser).isDisplayed();
+    public boolean registerWithExistedUser(){
+        return driver.findElement(alreadyExistedUser).isDisplayed();
     }
 
-    public void verifyAccountCreatedFun(){
-        System.out.println(driver.findElement(verifyAccountCreated).isDisplayed());
+    public boolean verifyAccountCreatedFun(){
+        return driver.findElement(verifyAccountCreated).isDisplayed();
     }
 
     public void clickOnContinueButton(){

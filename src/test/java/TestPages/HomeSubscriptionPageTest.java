@@ -2,6 +2,7 @@ package TestPages;
 
 import Pages.HomeSubscriptionPage;
 import org.testng.annotations.Test;
+import org.testng.Assert;
 import utils.BaseTest;
 
 public class HomeSubscriptionPageTest extends BaseTest {
@@ -13,10 +14,10 @@ public class HomeSubscriptionPageTest extends BaseTest {
 
         obj = new HomeSubscriptionPage(driver);
 
-        obj.HomeCheck();
-        obj.verifySubscriptionFun();
+        Assert.assertTrue(obj.HomeCheck());
+        Assert.assertTrue(obj.verifySubscriptionFun());
         obj.setEmailVerication("aya@gmail.com");
-        obj.clickOnSubmitButtonVerication();
+        Assert.assertTrue(obj.clickOnSubmitButtonVerication());
 
 
 

@@ -2,6 +2,7 @@ package TestPages;
 
 import Pages.CartSubscriptionPage;
 import org.testng.annotations.Test;
+import org.testng.Assert;
 import utils.BaseTest;
 
 public class CartSubscriptionPageTest extends BaseTest {
@@ -12,11 +13,11 @@ public class CartSubscriptionPageTest extends BaseTest {
     public void verifyCartSubscriptionPage(){
         obj = new CartSubscriptionPage(driver);
 
-        obj.HomeCheck();
+        Assert.assertTrue(obj.HomeCheck());
         obj.clickOnCartButton();
-        obj.verifySubscriptionFun();
+        Assert.assertTrue(obj.verifySubscriptionFun());
         obj.setEmailVerication("ayaali@gmail.com");
         obj.clickOnCartButton();
-        obj.clickOnSubmitButtonVerication();
+        Assert.assertTrue(obj.clickOnSubmitButtonVerication());
     }
 }

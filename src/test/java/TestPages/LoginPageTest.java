@@ -2,6 +2,7 @@ package TestPages;
 
 import Pages.LoginPage;
 import Pages.RegisterPage;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.BaseTest;
 
@@ -25,7 +26,7 @@ public class LoginPageTest extends BaseTest {
     @Test
     public void inValidLogin(){
         obj = new LoginPage(driver);
-        obj.HomeCheck();
+        Assert.assertTrue(obj.HomeCheck());
         obj.SingInAndSignUpButton();
         obj.setEmailAddressField("ayaal@gmail.com");
         obj.setPasswordField("12345679");
@@ -35,6 +36,6 @@ public class LoginPageTest extends BaseTest {
 //        obj.deleteButton();
 //        obj.checkIsDeleted();
 
-        obj.checkInValidLoginMessageVisability();
+        Assert.assertTrue(obj.checkInValidLoginMessageVisability());
     }
 }

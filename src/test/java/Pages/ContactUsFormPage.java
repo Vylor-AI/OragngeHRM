@@ -30,8 +30,8 @@ public class ContactUsFormPage {
 
     By homeButton = By.cssSelector("#form-section > a");
 
-    public void HomeCheck() {
-        System.out.println(driver.findElement(homeCheck).isDisplayed());
+    public boolean HomeCheck() {
+        return driver.findElement(homeCheck).isDisplayed();
     }
 
     public void contactUsFormButtonFun() {
@@ -40,8 +40,8 @@ public class ContactUsFormPage {
         driver.navigate().to(value2);
     }
 
-    public void checkGetInTouchVisible(){
-        System.out.println(driver.findElement(getInTouchVisible).isDisplayed());
+    public boolean checkGetInTouchVisible(){
+        return driver.findElement(getInTouchVisible).isDisplayed();
     }
 
     public void setNameContact(String name) {
@@ -72,8 +72,8 @@ public class ContactUsFormPage {
         driver.switchTo().alert().accept();
     }
 
-    public void verifySuccessMessage(){
-        System.out.println(driver.findElement(successMessageContact).isDisplayed());
+    public boolean verifySuccessMessage(){
+        return driver.findElement(successMessageContact).isDisplayed();
     }
 
     public void goHomeButtonFun() {

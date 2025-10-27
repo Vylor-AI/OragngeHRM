@@ -2,6 +2,7 @@ package TestPages;
 
 import Pages.ContactUsFormPage;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.BaseTest;
 
@@ -14,10 +15,10 @@ public class ContactUsFormPageTest extends BaseTest {
 
         obj = new ContactUsFormPage(driver);
 
-        obj.HomeCheck();
+        Assert.assertTrue(obj.HomeCheck());
         obj.contactUsFormButtonFun();
 
-        obj.checkGetInTouchVisible();
+        Assert.assertTrue(obj.checkGetInTouchVisible());
 
         obj.setNameContact("aya");
         obj.setEmailContact("ayaali@gmail.com");
@@ -29,10 +30,9 @@ public class ContactUsFormPageTest extends BaseTest {
 
         obj.alertFun();
 
-        obj.verifySuccessMessage();
+        Assert.assertTrue(obj.verifySuccessMessage());
         obj.goHomeButtonFun();
-        obj.HomeCheck();
+        Assert.assertTrue(obj.HomeCheck());
     }
-
 
 }

@@ -50,11 +50,11 @@ public class ProductWithCart {
 
     By verifyCartEmpty = By.xpath("//span[@id=\"empty_cart\"]");
 
-    public void HomeCheck() {
-        System.out.println(driver.findElement(homeCheck).isDisplayed());
+    public boolean HomeCheck() {
+        boolean visible = driver.findElement(homeCheck).isDisplayed();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0, 500);");
-
+        return visible;
     }
 
     public void goToProductsPage() {
@@ -115,26 +115,24 @@ public class ProductWithCart {
         driver.navigate().to(value2);
     }
 
-    public void verifyFirstProductAddedToCart(){
-        System.out.println(driver.findElement(firstProductAddedToCart).isDisplayed());
+    public boolean verifyFirstProductAddedToCart(){
+        return driver.findElement(firstProductAddedToCart).isDisplayed();
     }
 
-    public void verifySeconedProductAddedToCart(){
-        System.out.println(driver.findElement(secondProductAddedToCart).isDisplayed());
+    public boolean verifySeconedProductAddedToCart(){
+        return driver.findElement(secondProductAddedToCart).isDisplayed();
     }
 
-    public void verifyDetailsOfFirstProduct(){
-        System.out.println(driver.findElement(firstProductPriceInCartPage).isDisplayed());
-        System.out.println(driver.findElement(firstProductQuantityInCartPage).isDisplayed());
-        System.out.println(driver.findElement(firstProductTotalPriceInCartPage).isDisplayed());
-
+    public boolean verifyDetailsOfFirstProduct(){
+        return driver.findElement(firstProductPriceInCartPage).isDisplayed()
+            && driver.findElement(firstProductQuantityInCartPage).isDisplayed()
+            && driver.findElement(firstProductTotalPriceInCartPage).isDisplayed();
     }
 
-    public void verifyDetailsOfSecondProduct(){
-        System.out.println(driver.findElement(seconedProductPriceInCartPage).isDisplayed());
-        System.out.println(driver.findElement(seconedProductQuantityInCartPage).isDisplayed());
-        System.out.println(driver.findElement(seconedProductTotalPriceInCartPage).isDisplayed());
-
+    public boolean verifyDetailsOfSecondProduct(){
+        return driver.findElement(seconedProductPriceInCartPage).isDisplayed()
+            && driver.findElement(seconedProductQuantityInCartPage).isDisplayed()
+            && driver.findElement(seconedProductTotalPriceInCartPage).isDisplayed();
     }
 
     public void chooseProductFromHome(){
@@ -157,15 +155,15 @@ public class ProductWithCart {
         elementToClick.click();
     }
 
-    public void checkVerifyCartPage(){
-        System.out.println(driver.findElement(verifyCartPage).isDisplayed());
+    public boolean checkVerifyCartPage(){
+        return driver.findElement(verifyCartPage).isDisplayed();
     }
 
     public void checkDeleteProductFromCart(){
         driver.findElement(deleteProductFromCart).click();
     }
 
-    public void checkVerifyCartEmpty(){
-        System.out.println(driver.findElement(verifyCartEmpty).isDisplayed());
+    public boolean checkVerifyCartEmpty(){
+        return driver.findElement(verifyCartEmpty).isDisplayed();
     }
 }

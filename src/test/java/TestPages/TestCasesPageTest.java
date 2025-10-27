@@ -1,6 +1,7 @@
 package TestPages;
 
 import Pages.TestCasesPage;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.BaseTest;
 
@@ -9,12 +10,10 @@ public class TestCasesPageTest extends BaseTest {
     TestCasesPage obj;
 
     @Test
-    public void checkTestCasesPage(){
-
+    public void verifyTestCasesPage(){
         obj = new TestCasesPage(driver);
-
-        obj.HomeCheck();
+        Assert.assertTrue(obj.HomeCheck());
         obj.testCasesButtonFun();
-        obj.verifyTestCasesButtonFun();
+        Assert.assertTrue(obj.verifyTestCasesButtonFun());
     }
 }

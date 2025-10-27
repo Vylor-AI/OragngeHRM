@@ -2,6 +2,7 @@ package TestPages;
 
 import Pages.ProductQuantityInCart;
 import org.testng.annotations.Test;
+import org.testng.Assert;
 import utils.BaseTest;
 
 public class ProductQuantityInCartTest extends BaseTest {
@@ -11,13 +12,13 @@ public class ProductQuantityInCartTest extends BaseTest {
     @Test
     public void verifyProductQuantityInCart(){
         obj = new ProductQuantityInCart(driver);
-        obj.HomeCheck();
+        Assert.assertTrue(obj.HomeCheck());
         obj.clickOnViewProduct();
-        obj.verifyProductDetailIsOpened();
+        Assert.assertTrue(obj.verifyProductDetailIsOpened());
         obj.clickOnAddToCartFirstProduct();
         obj.clickOnAddToCart();
         obj.clickOnViewCart();
-        obj.verifyDetailsOfFirstProduct();
+        Assert.assertTrue(obj.verifyDetailsOfFirstProduct());
 
     }
 }

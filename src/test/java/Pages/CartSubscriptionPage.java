@@ -23,8 +23,8 @@ public class CartSubscriptionPage {
 
 
 
-    public void HomeCheck() {
-        System.out.println(driver.findElement(homeCheck).isDisplayed());
+    public boolean HomeCheck() {
+        return driver.findElement(homeCheck).isDisplayed();
     }
 
     public void clickOnCartButton(){
@@ -35,19 +35,16 @@ public class CartSubscriptionPage {
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
 
     }
-    public void verifySubscriptionFun(){
-        System.out.println(driver.findElement(verifySubscription).isDisplayed());
+    public boolean verifySubscriptionFun(){
+        return driver.findElement(verifySubscription).isDisplayed();
     }
 
     public void setEmailVerication(String email){
         driver.findElement(emailVerication).sendKeys(email);
     }
 
-    public void clickOnSubmitButtonVerication(){
+    public boolean clickOnSubmitButtonVerication(){
         driver.findElement(submitButtonVerication).click();
-
-        System.out.println(driver.findElement(By.cssSelector("#success-subscribe > div")).isDisplayed());
-
-//        driver.findElement(submitButtonVerication).click();
+        return driver.findElement(By.cssSelector("#success-subscribe > div")).isDisplayed();
     }
 }

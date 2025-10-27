@@ -96,8 +96,8 @@ public class RegisterWhileCheckoutCase {
 
     By checkDeleted = By.cssSelector("#form > div > div > div > h2 > b");
 
-    public void HomeCheck() {
-        System.out.println(driver.findElement(homeCheck).isDisplayed());
+    public boolean HomeCheck() {
+        return driver.findElement(homeCheck).isDisplayed();
     }
 
     public void clickOnAddToCartFirstProduct(){
@@ -153,8 +153,8 @@ public class RegisterWhileCheckoutCase {
         driver.navigate().to(value);
     }
 
-    public void verifyCartPageFun(){
-        System.out.println(driver.findElement(verifyCartPage).isDisplayed());
+    public boolean verifyCartPageFun(){
+        return driver.findElement(verifyCartPage).isDisplayed();
     }
 
     public void ClickOnProcceedToCheckout(){
@@ -261,8 +261,8 @@ public class RegisterWhileCheckoutCase {
         driver.findElement(createAccountButton).click();
     }
 
-    public void verifyNewUserCreated(){
-        System.out.println(driver.findElement(newUserSignUpVisible).isDisplayed());
+    public boolean verifyNewUserCreated(){
+        return driver.findElement(newUserSignUpVisible).isDisplayed();
     }
 
     public void clickOnCartButton(){
@@ -271,12 +271,12 @@ public class RegisterWhileCheckoutCase {
         driver.navigate().to(value);
     }
 
-    public void verifyAddressDetails(){
-        System.out.println(driver.findElement(addressDetails).isDisplayed());
+    public boolean verifyAddressDetails(){
+        return driver.findElement(addressDetails).isDisplayed();
     }
 
-    public void verifyReviewYourOrder(){
-        System.out.println(driver.findElement(reviewYourOrder).isDisplayed());
+    public boolean verifyReviewYourOrder(){
+        return driver.findElement(reviewYourOrder).isDisplayed();
     }
 
     public void writeCommentInTextArea(String text){
@@ -311,16 +311,16 @@ public class RegisterWhileCheckoutCase {
         driver.findElement(payAndConfirmOrder).click();
     }
 
-    public void checkSuccessMessage(){
-        System.out.println(driver.findElement(successMessage).isDisplayed());
+    public boolean checkSuccessMessage(){
+        return driver.findElement(successMessage).isDisplayed();
     }
 
     public void clickOnDelete(){
         driver.findElement(delet).click();
     }
 
-    public void verifyCheckDeleted(){
-        System.out.println(driver.findElement(checkDeleted).isDisplayed());
+    public boolean verifyCheckDeleted(){
+        return driver.findElement(checkDeleted).isDisplayed();
     }
 
 }

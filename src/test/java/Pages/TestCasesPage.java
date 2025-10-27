@@ -16,8 +16,8 @@ public class TestCasesPage {
     By testCaseButton = By.cssSelector("#header > div > div > div > div.col-sm-8 > div > ul > li:nth-child(5) > a");
     By verifyTestCasesButton = By.cssSelector("#form > div > div.row > div > h2 > b");
 
-    public void HomeCheck() {
-        System.out.println(driver.findElement(homeCheck).isDisplayed());
+    public boolean HomeCheck() {
+        return driver.findElement(homeCheck).isDisplayed();
     }
 
     public void testCasesButtonFun() {
@@ -26,8 +26,8 @@ public class TestCasesPage {
         driver.navigate().to(value2);
     }
 
-    public void verifyTestCasesButtonFun(){
-        System.out.println(driver.findElement(verifyTestCasesButton).isDisplayed());
+    public boolean verifyTestCasesButtonFun(){
+        return driver.findElement(verifyTestCasesButton).isDisplayed();
     }
 
 }

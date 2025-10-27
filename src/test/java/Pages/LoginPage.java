@@ -30,8 +30,8 @@ public class LoginPage {
     By InvalidLoginMessage = By.cssSelector("#form > div > div > div.col-sm-4.col-sm-offset-1 > div > form > p");
 
 
-    public void HomeCheck() {
-        System.out.println(driver.findElement(homeCheck).isDisplayed());
+    public boolean HomeCheck() {
+        return driver.findElement(homeCheck).isDisplayed();
     }
 
     public void SingInAndSignUpButton() {
@@ -52,8 +52,8 @@ public class LoginPage {
         driver.findElement(signUpButton).click();
     }
 
-    public void checkUserNameBar(){
-        driver.findElement(usernameInBar).isDisplayed();
+    public boolean checkUserNameBar(){
+        return driver.findElement(usernameInBar).isDisplayed();
     }
 
     public void deleteButton() {
@@ -62,12 +62,12 @@ public class LoginPage {
         driver.navigate().to(value2);
     }
 
-    public void checkIsDeleted(){
-        driver.findElement(checkDeleted).isDisplayed();
+    public boolean checkIsDeleted(){
+        return driver.findElement(checkDeleted).isDisplayed();
     }
 
-    public void checkInValidLoginMessageVisability(){
-        driver.findElement(InvalidLoginMessage).isDisplayed();
+    public boolean checkInValidLoginMessageVisability(){
+        return driver.findElement(InvalidLoginMessage).isDisplayed();
     }
 
 

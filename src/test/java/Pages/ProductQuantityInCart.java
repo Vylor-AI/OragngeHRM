@@ -31,8 +31,8 @@ public class ProductQuantityInCart {
 
     By quantityOfProductInCart = By.cssSelector("#product-1 > td.cart_quantity > button");
 
-    public void HomeCheck() {
-        System.out.println(driver.findElement(homeCheck).isDisplayed());
+    public boolean HomeCheck() {
+        return driver.findElement(homeCheck).isDisplayed();
     }
 
     public void clickOnViewProduct(){
@@ -41,8 +41,8 @@ public class ProductQuantityInCart {
         driver.navigate().to(value2);
     }
 
-    public void verifyProductDetailIsOpened(){
-        System.out.println(driver.findElement(productDetailIsOpened).isDisplayed());
+    public boolean verifyProductDetailIsOpened(){
+        return driver.findElement(productDetailIsOpened).isDisplayed();
     }
 
     public void clickOnAddToCartFirstProduct(){
@@ -78,13 +78,12 @@ public class ProductQuantityInCart {
 
     }
 
-    public void verifyDetailsOfFirstProduct(){
+    public boolean verifyDetailsOfFirstProduct(){
         WebElement element = driver.findElement(quantityOfProductInCart);
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
         WebElement element2 = wait.until(
                 ExpectedConditions.visibilityOf(element));
         String value = element.getText();
-        System.out.println(value == quantity);
-
+        return value.equals(quantity);
     }
 }

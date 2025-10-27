@@ -37,8 +37,8 @@ public class ProductPage {
 
     By relatedSearchProducts = By.xpath("/html/body/section[2]/div/div/div[2]/div/div[2]/div/div[1]/div[1]/p");
 
-    public void HomeCheck() {
-        System.out.println(driver.findElement(homeCheck).isDisplayed());
+    public boolean HomeCheck() {
+        return driver.findElement(homeCheck).isDisplayed();
     }
 
     public void productsButtonFun() {
@@ -47,12 +47,12 @@ public class ProductPage {
         driver.navigate().to(value2);
     }
 
-    public void verifyProductsButtonFun(){
-        System.out.println(driver.findElement(verifyProductsButton).isDisplayed());
+    public boolean verifyProductsButtonFun(){
+        return driver.findElement(verifyProductsButton).isDisplayed();
     }
 
-    public void verifyProductsVisableFun(){
-        System.out.println(driver.findElement(verifyProductsListVisable).isDisplayed());
+    public boolean verifyProductsVisableFun(){
+        return driver.findElement(verifyProductsListVisable).isDisplayed();
     }
 
     public void clickOnViewProductFun(){
@@ -61,8 +61,8 @@ public class ProductPage {
         driver.navigate().to(value2);
     }
 
-    public void checkNavigationIntoRightProductFun(){
-        System.out.println(driver.findElement(checkNavigationIntoRightProduct).isDisplayed());
+    public boolean checkNavigationIntoRightProductFun(){
+        return driver.findElement(checkNavigationIntoRightProduct).isDisplayed();
     }
 
     public String getProductNameText() {
@@ -97,12 +97,12 @@ public class ProductPage {
         driver.findElement(getSearchButton).click();
     }
 
-    public void verifySearchedProductFun(){
-        System.out.println(driver.findElement(verifySearchedProduct).isDisplayed());
+    public boolean verifySearchedProductFun(){
+        return driver.findElement(verifySearchedProduct).isDisplayed();
     }
 
-    public void getRelatedSearchProductsFun(){
-        System.out.println(driver.findElement(relatedSearchProducts).isDisplayed());
+    public boolean getRelatedSearchProductsFun(){
+        return driver.findElement(relatedSearchProducts).isDisplayed();
     }
 
 

@@ -27,8 +27,8 @@ public class LogoutPage {
 
     By logoutButton = By.cssSelector("#header > div > div > div > div.col-sm-8 > div > ul > li:nth-child(4) > a");
 
-    public void HomeCheck() {
-        System.out.println(driver.findElement(homeCheck).isDisplayed());
+    public boolean HomeCheck() {
+        return driver.findElement(homeCheck).isDisplayed();
     }
 
     public void SingInAndSignUpButton() {
@@ -37,8 +37,8 @@ public class LogoutPage {
         driver.navigate().to(value2);
     }
 
-    public void NewUserSignUpVisible() {
-        System.out.println(driver.findElement(newUserSignUpVisible).isDisplayed());
+    public boolean NewUserSignUpVisible() {
+        return driver.findElement(newUserSignUpVisible).isDisplayed();
     }
 
     public void setEmailAddressField(String emailAddressFieldtext) {
@@ -53,8 +53,8 @@ public class LogoutPage {
         driver.findElement(signUpButton).click();
     }
 
-    public void checkUserNameBar(){
-        driver.findElement(usernameInBar).isDisplayed();
+    public boolean checkUserNameBar(){
+        return driver.findElement(usernameInBar).isDisplayed();
     }
 
     public void logoutButtonFun() {
